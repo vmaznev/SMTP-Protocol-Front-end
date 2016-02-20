@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang = "bg">
+<head>
+<meta charset = "utf-8" />
+<title>SMTP команди</title>
+<style>
+body {
+	background: #9999ff;
+	margin: 0;
+	padding: 0;
+	font-family: "Helvetica", "Arial";
+}
+
+#wrapper {
+	width: 960px;
+	height: auto;
+	background: #99ccff;
+	border-left: 5px solid #000080;
+	border-right: 5px solid #000080;
+	overflow: auto;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+#header {
+	width: 100%;
+	height: 100px;
+	border-bottom: 3px solid #000080;
+}
+
+#sidebar {
+	width: 275px;
+	height: 100%;
+}
+
+#menu ul {
+	float: left;
+	height: auto;
+	width: 200px;
+}
+
+#menu ul li {
+	list-style: none;
+	padding: 5px;
+	text-align: center;
+}
+
+#menu ul li a {
+	background: #9999ff;
+	color: #000080;
+	text-decoration: none;
+	padding: 10px, 0px;
+	display: block;
+}
+
+#menu ul li a:hover {
+	color: #fff;
+}
+
+#content {
+	float: left;
+	width: 655px;
+	height: 100%;
+	padding-left: 15px;
+	letter-spacing: 1;
+	color: #57574C;
+	border-left: 3px solid #000080;
+}
+
+h1 {
+	text-align: center;
+	padding: 5px;
+	border-bottom: 1px solid #000080;
+}
+
+p {
+	text-indent: 50px;
+	line-height: 25px;
+}
+
+#footer {
+	clear: both;
+	width: 100%;
+	height: 80px;
+	color: #7C7063;
+	border-top: 3px solid #000080;
+}
+
+h5 {
+	text-align: center;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id = "wrapper">
+	<div id = "header">
+		<div id = "logo">
+			<center><a href="index.html"><img src = "SMTPLogoFinalVersion.png" width = "700" height = "90" alt = "Logo" title = "SMTP Protocol" /></a></center>
+		</div>
+	</div>
+	<div id = "sidebar">
+		<div id = "menu">
+			<ul>
+				<li><h2><a href="model.html">Модел</a></h2></li>
+				<li><h2><a href="mailtransaction.html">Имейл транзакции</a></h2></li>
+				<li><h2><a href="commands.html"><font color = "#990000">Команди</font></a></h2></li>
+				<li><h2><a href="spam.html">Сигурност и СПАМ</a></h2></li>
+			</ul>
+		</div>
+	</div>
+	<div id = "content">
+		<h1><font color = "#990000">SMTP команди...</font></h1>
+		<p align = "justify"> <font color = "#990000"> За да върви безпроблемно и гладко цялата комуникация между подателя и получателя се разменят команди. Първата стъпка е за изпращача, който очаква съответен отговор от получателя дали всичко е наред. През годините са настъпвали доста промени по стандарта на протокола и до днес са се формирали няколко основни команди за комуникация. </font> </br> </p>
+		<table border = "1" style = "width:100%">
+			<tr>
+				<th>Команди при изпращане</th>
+				<th>Действие</th>
+			</tr>
+			<tr>
+				<td>HELO</td>
+				<td>Обозначава началото на комуникацията с пощенския сървър.</td>
+			</tr>
+			<tr>
+				<td>MAIL</td>
+				<td>Показва кой е подателят.</td>
+			</tr>
+			<tr>
+				<td>RCPT</td>
+				<td>Показва кой е получателят.</td>
+			</tr>
+			<tr>
+				<td>DATA</td>
+				<td>Информира, че ще изпратите текста или тялото на съобщението.</td>
+			</tr>
+			<tr>
+				<td>QUIT</td>
+				<td>Маркира края на комуникацията по изпращането.</td>
+			</tr>
+			<tr>
+				<td>EXPN</td>
+				<td>Показва, че се използва списък за изпращане.</td>
+			</tr>
+			<tr>
+				<td>SEND</td>
+				<td>Изпраща съобщение до терминала на потребителя, вместо до mailbox-а.</td>
+			</tr>
+			<tr>
+				<td>VRFY</td>
+				<td>Проверява наличието на такъв получател за този адрес.</td>
+			</tr>
+		</table>
+		<p align = "justify"> <font color = "#990000"> Всяка команда ще получи отговор във вид на 3 цифрено число, последвано от кратко текстово описание на отговора.
+		</br>
+		<hr>
+		<b>Команди за отговор:</b>
+		<ul>
+			<li>211 - Състояние на сървъра.</li>
+			<li>220 - Сървъра е в готовност.</li>
+			<li>221 - Приключване на комуникацията от сървъра.</li>
+			<li>250 - Операцията е изпълнена успешно.</li>
+			<li>251 - Посоченият потребител или адрес не се намира на този сървър, но той ще предаде съобщението.</li>
+			<li>354 - Това е отговора на пощенският сървър на командата DATA. Изчаква, докато не получи следната комбинация "\r\n.\r\n."</li>
+			<li>421 - Пощенският сървър ще бъде спрян, запазете съобщението и опитайте отново по-късно.</li>
+			<li>450 - Пощенската кутия е заета в момента, изчакайте и опитайте отново.</li>
+			<li>452 - Командата не беше изпълнена поради недостатъчно пространство за съхранение.</li>
+			<li>500 - Последната команда съдържа синтактична грешка или е твърде дълга.</li>
+			<li>502 - Пощенският сървър не поддържа тази команда.</li>
+			<li>550 - Пощенската кутия не може да бъда намерена или нямате съответни права за достъп.</li>
+			<li>552 - Пощенската кутия на получателя няма достатъчно пространство за да бъде доставено съобщението ви. Запазете съобщението и опитайте отново по-късно.</li>
+			<li>554 - Доставянето на съобщението е неуспешно по неизвестна причина.</li>
+		</ul>
+		</br>
+		Тези трицифрени числа и краткото им текстово описание най-често са включени в отчета, който пощенският сървър изпраща на подателя при неуспешно доставяне на и-мейл съобщението. </font> </br> </p>
+		<a href="#">Върни се най - отгоре на страницата...!</a> </br> </br>
+	</div>
+	<div id = "footer">
+		<h5> Сайтът е създаден от Валери Радославов Мазнев като проект по Компютърни Мрежи, ТУ - София, 2016. </br> </h5>
+	</div>
+</div>
+
+</body>
+
+</html>

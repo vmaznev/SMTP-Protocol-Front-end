@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang = "bg">
+<head>
+<meta charset = "utf-8" />
+<title>SMTP имейл транзакции</title>
+<style>
+body {
+	background: #9999ff;
+	margin: 0;
+	padding: 0;
+	font-family: "Helvetica", "Arial";
+}
+
+#wrapper {
+	width: 960px;
+	height: auto;
+	background: #99ccff;
+	border-left: 5px solid #000080;
+	border-right: 5px solid #000080;
+	overflow: auto;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+#header {
+	width: 100%;
+	height: 100px;
+	border-bottom: 3px solid #000080;
+}
+
+#sidebar {
+	width: 275px;
+	height: 100%;
+}
+
+#menu ul {
+	float: left;
+	height: auto;
+	width: 200px;
+}
+
+#menu ul li {
+	list-style: none;
+	padding: 5px;
+	text-align: center;
+}
+
+#menu ul li a {
+	background: #9999ff;
+	color: #000080;
+	text-decoration: none;
+	padding: 10px, 0px;
+	display: block;
+}
+
+#menu ul li a:hover {
+	color: #fff;
+}
+
+#content {
+	float: left;
+	width: 655px;
+	height: 100%;
+	padding-left: 15px;
+	letter-spacing: 1;
+	color: #57574C;
+	border-left: 3px solid #000080;
+}
+
+h1 {
+	text-align: center;
+	padding: 5px;
+	border-bottom: 1px solid #000080;
+}
+
+p {
+	text-indent: 50px;
+	line-height: 25px;
+}
+
+#footer {
+	clear: both;
+	width: 100%;
+	height: 80px;
+	color: #7C7063;
+	border-top: 3px solid #000080;
+}
+
+h5 {
+	text-align: center;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id = "wrapper">
+	<div id = "header">
+		<div id = "logo">
+			<center><a href="index.html"><img src = "SMTPLogoFinalVersion.png" width = "700" height = "90" alt = "Logo" title = "SMTP Protocol" /></a></center>
+		</div>
+	</div>
+	<div id = "sidebar">
+		<div id = "menu">
+			<ul>
+				<li><h2><a href="model.html">Модел</a></h2></li>
+				<li><h2><a href="mailtransaction.html"><font color = "#990000">Имейл транзакции</font></a></h2></li>
+				<li><h2><a href="commands.html">Команди</a></h2></li>
+				<li><h2><a href="spam.html">Сигурност и СПАМ</a></h2></li>
+			</ul>
+		</div>
+	</div>
+	<div id = "content">
+		<h1><font color = "#990000">SMTP имейл транзакции...</font></h1>
+		<p align = "justify"> <font color = "#990000"> SMTP имейл транзакциите се състоят в три стъпки. Това са: 
+		<ol type = "1">
+			<li><h4><a href="mail.html">MAIL</a></h4></li>
+			<ul style="list-style-type:square">
+				<li><b>Показва кой е подателят.</b></li>
+			</ul>
+			<li><h4><a href="rcpt.html">RCPT</a></h4></li>
+			<ul style="list-style-type:square">
+				<li><b>Показва кой е получателят.</b></li>
+			</ul>
+			<li><h4><a href="data.html">DATA</a></h4></li>
+			<ul style="list-style-type:square">
+				<li><b>Информира, че ще изпратите текста или тялото на съобщението.</b></li>
+			</ul>
+		</ol>
+		</font> </p>
+		<p align = "justify"> <font color = "#990000"> Транзакцията се започва с MAIL команда, която дава идентификация на изпращатия. Следват серия от една или повече RCPT команди, които дават на получаващия информация. След това, DATA командата предоставя имейл данните. След всичко това, индикатор за край на имейл данните потвърждава транзакцията. </br> </br>
+
+		Пример за SMTP процедура: </br>
+		<code>
+		<pre>
+	    S: MAIL FROM:<Smith@Alpha.ARPA>
+            R: 250 OK </br>
+
+            S: RCPT TO:<Jones@Beta.ARPA>
+            R: 250 OK
+
+            S: RCPT TO:<Green@Beta.ARPA>
+            R: 550 No such user here
+
+            S: RCPT TO:<Brown@Beta.ARPA>
+            R: 250 OK
+
+            S: DATA
+            R: 354 Start mail input; end with <CRLF>.<CRLF>
+            S: Blah blah blah...
+            S: ...etc. etc. etc.
+            S: <CRLF>.<CRLF>
+            R: 250 OK
+        </pre>
+		</code> </p>
+		<p align = "justify">
+		В този пример, Smith изпраща имейл на хост Alpha.APRA, на John, Green и Brown, които са на хост Beta.APRA. В примера се предполага, че хост Alpha се свързва с хост Beta директно. Имейлът е изпешно изпратен до John и Brown. Green не е имал mailbox на хост Beta.
+		</font> </br> </p>
+		<a href="#">Върни се най - отгоре на страницата...!</a> </br> </br>
+	</div>
+	<div id = "footer">
+		<h5> Сайтът е създаден от Валери Радославов Мазнев като проект по Компютърни Мрежи, ТУ - София, 2016. </br> </h5>
+	</div>
+</div>
+
+</body>
+
+</html>

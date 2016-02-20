@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang = "bg">
+<head>
+<meta charset = "utf-8" />
+<title>SMTP Protocol</title>
+<style>
+body {
+	background: #9999ff;
+	margin: 0;
+	padding: 0;
+	font-family: "Helvetica", "Arial";
+}
+
+#wrapper {
+	width: 960px;
+	height: auto;
+	background: #99ccff;
+	border-left: 5px solid #000080;
+	border-right: 5px solid #000080;
+	overflow: auto;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+#header {
+	width: 100%;
+	height: 100px;
+	border-bottom: 3px solid #000080;
+}
+
+#sidebar {
+	width: 275px;
+	height: 100%;
+}
+
+#menu ul {
+	float: left;
+	height: auto;
+	width: 200px;
+}
+
+#menu ul li {
+	list-style: none;
+	padding: 5px;
+	text-align: center;
+}
+
+#menu ul li a {
+	background: #9999ff;
+	color: #000080;
+	text-decoration: none;
+	padding: 10px, 0px;
+	display: block;
+}
+
+#menu ul li a:hover {
+	color: #fff;
+}
+
+#content {
+	float: left;
+	width: 655px;
+	height: 100%;
+	padding-left: 15px;
+	letter-spacing: 1;
+	color: #57574C;
+	border-left: 3px solid #000080;
+}
+
+h1 {
+	text-align: center;
+	padding: 5px;
+	border-bottom: 1px solid #000080;
+}
+
+p {
+	text-indent: 50px;
+	line-height: 25px;
+}
+
+#footer {
+	clear: both;
+	width: 100%;
+	height: 80px;
+	color: #7C7063;
+	border-top: 3px solid #000080;
+}
+
+h5 {
+	text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<div id = "wrapper">
+	<div id = "header">
+		<div id = "logo">
+			<center><a href="index.html"><img src = "SMTPLogoFinalVersion.png" width = "700" height = "90" alt = "Logo" title = "SMTP Protocol" /></a></center>
+		</div>
+	</div>
+	<div id = "sidebar">
+		<div id = "menu">
+			<ul>
+				<li><h2><a href="model.html">Модел</a></h2></li>
+				<li><h2><a href="mailtransaction.html">Имейл транзакции</a></h2></li>
+				<li><h2><a href="commands.html">Команди</a></h2></li>
+				<li><h2><a href="spam.html">Сигурност и СПАМ</a></h2></li>
+			</ul>
+		</div>
+	</div>
+	<div id = "content">
+		<h1><font color = "#990000">Какво е SMTP протокол?</font></h1>
+		<center><img src="SMTPProtocol.png" /></center>
+		<p align = "justify"> <font color = "#990000"> Работата на SMTP (Simple Mail Transfer Protocol) протокола е да трансферира имейли надеждно и ефективно.Той 
+			оперира традиционно с TCP порт 25. SMTP протоколът се използва от повечето имейл системи, които изпращат поща. 
+			Писмата след това могат да се изтеглят с <a href ="https://en.wikipedia.org/wiki/Post_Office_Protocol">POP3</a> или <a href ="https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol">IMAP</a> от локален клиент или програма. Широко разпространение
+			е получил в началото на 80-те години (1980). SMTP протоколът е създаден така, че да бъде еднакво полезен на
+			който и да е компютър и потребител. </font> </br> </p>
+	</div>
+	<div id = "footer">
+		<h5> Сайтът е създаден от Валери Радославов Мазнев като проект по Компютърни Мрежи, ТУ - София, 2016. </br> </h5>
+	</div>
+</div>
+
+</body>
+
+</html>

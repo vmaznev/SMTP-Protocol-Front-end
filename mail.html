@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang = "bg">
+<head>
+<meta charset = "utf-8" />
+<title>SMTP имейл транзакции</title>
+<style>
+body {
+	background: #9999ff;
+	margin: 0;
+	padding: 0;
+	font-family: "Helvetica", "Arial";
+}
+
+#wrapper {
+	width: 960px;
+	height: auto;
+	background: #99ccff;
+	border-left: 5px solid #000080;
+	border-right: 5px solid #000080;
+	overflow: auto;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+#header {
+	width: 100%;
+	height: 100px;
+	border-bottom: 3px solid #000080;
+}
+
+#sidebar {
+	width: 275px;
+	height: 100%;
+}
+
+#menu ul {
+	float: left;
+	height: auto;
+	width: 200px;
+}
+
+#menu ul li {
+	list-style: none;
+	padding: 5px;
+	text-align: center;
+}
+
+#menu ul li a {
+	background: #9999ff;
+	color: #000080;
+	text-decoration: none;
+	padding: 10px, 0px;
+	display: block;
+}
+
+#menu ul li a:hover {
+	color: #fff;
+}
+
+#content {
+	float: left;
+	width: 655px;
+	height: 100%;
+	padding-left: 15px;
+	letter-spacing: 1;
+	color: #57574C;
+	border-left: 3px solid #000080;
+}
+
+h1 {
+	text-align: center;
+	padding: 5px;
+	border-bottom: 1px solid #000080;
+}
+
+p {
+	text-indent: 50px;
+	line-height: 25px;
+}
+
+#footer {
+	clear: both;
+	width: 100%;
+	height: 80px;
+	color: #7C7063;
+	border-top: 3px solid #000080;
+}
+
+h5 {
+	text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<div id = "wrapper">
+	<div id = "header">
+		<div id = "logo">
+			<center><a href="index.html"><img src = "SMTPLogoFinalVersion.png" width = "700" height = "90" alt = "Logo" title = "SMTP Protocol" /></a></center>
+		</div>
+	</div>
+	<div id = "sidebar">
+		<div id = "menu">
+			<ul>
+				<li><h2><a href="model.html">Модел</a></h2></li>
+				<li><h2><a href="mailtransaction.html"><font color = "#990000">Имейл транзакции</font></a></h2></li>
+				<li><h2><a href="commands.html">Команди</a></h2></li>
+				<li><h2><a href="spam.html">Сигурност и СПАМ</a></h2></li>
+			</ul>
+		</div>
+	</div>
+	<div id = "content">
+		<h1><font color = "#990000">MAIL командата...</font></h1>
+		<p align = "justify"> <font color = "#990000"> Това е първата стъпка от процедурата:
+		</br>
+		<pre>	MAIL &ltSP&gt FROM:&ltreverse-path&gt &ltCRLF&gt</pre> </font> </p>
+		<p align = "justify"> <font color = "#990000">Командата казва на сървър-SMTP, че нова имейл транзакция започва и да обнови всички свои таблици на състоянията и буфери, включително всички получатели и имейл данни. Командата предоставя и &ltreverse-path&gt, което може да се използва за докладване
+		на различни грешки. Ако се приеме, сървър-SMTP връща отговор 250 (OK).</font> </br> </p>
+		<p align = "justify"> <font color = "#990000">&ltreverse-path&gt може да съдържа и повече неща от просто mailbox-а. Тя има и лист с хостове, като първият хост в &ltreverse-path&gt би трябвало да е този, който изпраща командата.</font> </br> </p>
+		</br>
+		<a href="mailtransaction.html">Обратно към предишната страница...!</a>
+		</br>
+		</br>
+	</div>
+	<div id = "footer">
+		<h5> Сайтът е създаден от Валери Радославов Мазнев като проект по Компютърни Мрежи, ТУ - София, 2016. </br> </h5>
+	</div>
+</div>
+
+</body>
+
+</html>

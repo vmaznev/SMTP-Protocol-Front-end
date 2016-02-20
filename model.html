@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang = "bg">
+<head>
+<meta charset = "utf-8" />
+<title>SMTP моделът</title>
+<style>
+body {
+	background: #9999ff;
+	margin: 0;
+	padding: 0;
+	font-family: "Helvetica", "Arial";
+}
+
+#wrapper {
+	width: 960px;
+	height: auto;
+	background: #99ccff;
+	border-left: 5px solid #000080;
+	border-right: 5px solid #000080;
+	overflow: auto;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+#header {
+	width: 100%;
+	height: 100px;
+	border-bottom: 3px solid #000080;
+}
+
+#sidebar {
+	width: 275px;
+	height: 100%;
+}
+
+#menu ul {
+	float: left;
+	height: auto;
+	width: 200px;
+}
+
+#menu ul li {
+	list-style: none;
+	padding: 5px;
+	text-align: center;
+}
+
+#menu ul li a {
+	background: #9999ff;
+	color: #000080;
+	text-decoration: none;
+	padding: 10px, 0px;
+	display: block;
+}
+
+#menu ul li a:hover {
+	color: #fff;
+}
+
+#content {
+	float: left;
+	width: 655px;
+	height: 100%;
+	padding-left: 15px;
+	letter-spacing: 1;
+	color: #57574C;
+	border-left: 3px solid #000080;
+}
+
+h1 {
+	text-align: center;
+	padding: 5px;
+	border-bottom: 1px solid #000080;
+}
+
+p {
+	text-indent: 50px;
+	line-height: 25px;
+}
+
+#footer {
+	clear: both;
+	width: 100%;
+	height: 80px;
+	color: #7C7063;
+	border-top: 3px solid #000080;
+}
+
+h5 {
+	text-align: center;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id = "wrapper">
+	<div id = "header">
+		<div id = "logo">
+			<center><a href="index.html"><img src = "SMTPLogoFinalVersion.png" width = "700" height = "90" alt = "Logo" title = "SMTP Protocol" /></a></center>
+		</div>
+	</div>
+	<div id = "sidebar">
+		<div id = "menu">
+			<ul>
+				<li><h2><a href="model.html"><font color = "#990000">Модел</font></a></h2></li>
+				<li><h2><a href="mailtransaction.html">Имейл транзакции</a></h2></li>
+				<li><h2><a href="commands.html">Команди</a></h2></li>
+				<li><h2><a href="spam.html">Сигурност и СПАМ</a></h2></li>
+			</ul>
+		</div>
+	</div>
+	<div id = "content">
+		<h1><font color = "#990000">SMTP моделът...</font></h1>
+		<p align = "justify"> <font color = "#990000"> Дизайнът на SMTP модела е базиран на следния модел за комуникация: </font> </br> </p>
+		<center> <img src = "SMTPModel.jpg" /> </center>
+		<p align = "justify"> <font color = "#990000"> Като резултат от имейл заявка на потребител, клиент-SMTP осъществява двустранен канел за предаване с сървър-SMTP. Сървър-SMTP може да бъде или крайна дестинация, или междинна. SMTP командите се генерират от клиент-SMTP и се 
+		изпращат на сървър-SMTP. SMTP отговорите се изпращат от сървър-SMTP към клиент-SMTP в отговор на командите. </font> </br> </p>
+		<p align = "justify"> <font color = "#990000"> След като се осъществи канала за предаване, клиент-SMTP изпраща MAIL команда, която индикира изпращача на съобщението. Ако сървър-SMTP може да получи имейла, той дава OK отговор. В резултат на това, клиент-SMTP изпраща RCPT команда, с 
+		която идентифицира получателя на имейла. Ако сървър-SMTP може да приеме имейла за този получател, отговаря с OK. Ако
+		не може, дава отговор, че се отхвърля получателят (но не и цялата имейл транзакция). Клиент-SMTP и сървър-SMTP могат
+		да договарят за няколко получателя. Когато получателите са вече договорени, клиент-SMTP изпраща имейл данни и терминира.
+		Ако сървър-SMTP успешно обработи имейл данните, отговаря с OK. Целият този диалог нарочно е със заключена стъпка и 
+		е от тип one-at-a-time. </font> </br> </p>
+	</div>
+	<div id = "footer">
+		<h5> Сайтът е създаден от Валери Радославов Мазнев като проект по Компютърни Мрежи, ТУ - София, 2016. </br> </h5>
+	</div>
+</div>
+
+</body>
+
+</html>
