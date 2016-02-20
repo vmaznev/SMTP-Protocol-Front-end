@@ -1,0 +1,1 @@
+SMTP Protocol information, presented by using only HTML and CSS code. Created for Technical University of Sofia course.
