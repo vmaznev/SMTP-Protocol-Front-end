@@ -134,23 +134,23 @@ h5 {
 		Пример за SMTP процедура: </br>
 		<code>
 		<pre>
-	    S: MAIL FROM:<Smith@Alpha.ARPA>
+	    S: MAIL FROM:&ltSmith@Alpha.ARPA&gt
             R: 250 OK </br>
 
-            S: RCPT TO:<Jones@Beta.ARPA>
+            S: RCPT TO:&ltJones@Beta.ARPA&gt
             R: 250 OK
 
-            S: RCPT TO:<Green@Beta.ARPA>
+            S: RCPT TO:&ltGreen@Beta.ARPA&gt
             R: 550 No such user here
 
-            S: RCPT TO:<Brown@Beta.ARPA>
+            S: RCPT TO:&ltBrown@Beta.ARPA&gt
             R: 250 OK
 
             S: DATA
-            R: 354 Start mail input; end with <CRLF>.<CRLF>
+            R: 354 Start mail input; end with &ltCRLF&gt.&ltCRLF&gt
             S: Blah blah blah...
             S: ...etc. etc. etc.
-            S: <CRLF>.<CRLF>
+            S: &ltCRLF&gt.&ltCRLF&gt
             R: 250 OK
         </pre>
 		</code> </p>
